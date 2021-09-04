@@ -3,11 +3,24 @@
 
 #include "Header.hpp"
 
-using namespace std;
-
 class Neuron;
 class Layer;
 
-class NeuralNetwork{};
+class NeuralNetwork
+{
+public:
+    NeuralNetwork(vector<unsigned int> &topolgy);
+
+    vector<unsigned int> topology;
+
+    void about();
+
+    // Getters
+    Layer *get_layer_at(int indice) { return network[indice]; };
+
+private:
+    vector<Layer *> network;
+    void add_layer(Layer *l);
+};
 
 #endif
