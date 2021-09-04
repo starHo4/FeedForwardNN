@@ -1,11 +1,11 @@
 #include "NeuralNetwork.hpp"
 
-NeuralNetwork::NeuralNetwork(vector<unsigned int> &topology)
+NeuralNetwork::NeuralNetwork(vector<unsigned int> &topology, vector<string> &names)
 {
     this->topology = topology;
     for (int i = 0; i < topology.size(); i++)
     {
-        this->add_layer(new Layer(i, topology[i], this));
+        this->add_layer(new Layer(i, topology[i], names[i], this));
     }
 }
 

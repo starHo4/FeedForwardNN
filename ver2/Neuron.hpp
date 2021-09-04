@@ -6,6 +6,10 @@
 class Neuron
 {
 public:
+    // Constructor
+    Neuron(string name);
+
+    // Activate and derivative function
     double ActivateFunction(double x);
     double D_ActivateFunction(double y);
 

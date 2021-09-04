@@ -10,10 +10,10 @@ class Layer
 {
 public:
     // The body
-    vector<Neuron> thisLayer;
+    vector<Neuron *> thisLayer;
 
     // Constructor
-    Layer(int indice, int num_neurons, NeuralNetwork *net);
+    Layer(int indice, int num_neurons, string name, NeuralNetwork *net);
 
     // Main function
     void forward_propagate();
@@ -25,11 +25,9 @@ public:
     Vector get_deltas() { return deltas; };
     int get_num_neurons() { return num_neurons; };
     int get_indice() { return indice; };
-    // Setters
-    void set_inputs(Vector in);
-    void set_outputs(Vector out);
 
     void show_weights_matrix();
+    void show_function_name();
     void calc_deltas();
     void calc_new_weights();
 
@@ -37,6 +35,7 @@ private:
     NeuralNetwork *network;
     int indice;
     int num_neurons;
+    string functionName;
     Matrix weights;
 
     // Forwardprop

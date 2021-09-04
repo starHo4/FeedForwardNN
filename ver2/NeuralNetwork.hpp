@@ -9,7 +9,7 @@ class Layer;
 class NeuralNetwork
 {
 public:
-    NeuralNetwork(vector<unsigned int> &topolgy);
+    NeuralNetwork(vector<unsigned int> &topolgy, vector<string> &names);
 
     vector<unsigned int> topology;
 

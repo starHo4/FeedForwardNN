@@ -1,5 +1,10 @@
 #include "Neuron.hpp"
 
+Neuron::Neuron(string name)
+{
+    this->functionName = name;
+}
+
 double Neuron::ActivateFunction(double x)
 {
     string name = this->functionName;
