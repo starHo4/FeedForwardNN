@@ -13,13 +13,21 @@ public:
 
     vector<unsigned int> topology;
 
+    void sim(Vector inputs);
+    void train_by_error(Matrix inputs, Matrix targets, double target_error);
+
     void about();
 
     // Getters
+    Vector get_nn_outputs();
     Layer *get_layer_at(int indice) { return network[indice]; };
+    Vector get_targets() { return targets; };
+    // Setters
+    void set_targets(Vector tar);
 
 private:
     vector<Layer *> network;
+    Vector targets;
     void add_layer(Layer *l);
 };
 

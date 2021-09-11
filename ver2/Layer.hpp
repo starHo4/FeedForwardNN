@@ -3,6 +3,9 @@
 
 #include "Header.hpp"
 
+Matrix Transpose(Matrix M);
+Vector MultMatVec(Matrix &M, Vector &V);
+
 class Neuron;
 class NeuralNetwork;
 
@@ -25,6 +28,12 @@ public:
     Vector get_deltas() { return deltas; };
     int get_num_neurons() { return num_neurons; };
     int get_indice() { return indice; };
+    Matrix get_weights() { return weights; };
+
+    // Setters
+    void set_inputs(Vector in) { inputs = in; };
+    void set_outputs(Vector out) { outputs = out; };
+    void set_weights(Matrix W) { weights = W; };
 
     void show_weights_matrix();
     void show_function_name();
